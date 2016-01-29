@@ -1,39 +1,139 @@
-# Typedjq::Rails
+# TypedJQ-rails
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/typedjq/rails`. To experiment with that code, run `bin/console` for an interactive prompt.
+This gem is [**Typed.js**](https://github.com/mattboldt/typed.js) for rails. 
 
-TODO: Delete this and the text above, and describe your gem
+[View the live demo](http://www.mattboldt.com/demos/typed-js/) and you'll know how awsome it is, let's use it now! :sunglasses:
 
 ## Installation
 
-Add this line to your application's Gemfile:
+#### 1. Add this line to your `Gemfile`:
 
 ```ruby
 gem 'typedjq-rails'
 ```
 
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
+And then `$ bundle` it, or install it yourself as:
 
     $ gem install typedjq-rails
 
+#### 2. Add require to your `application.js`
+
+```javascript
+//= require jquery
+//= require jquery.turbolinks
+//= require jquery_ujs
+...
+//= require typed
+//= require turbolinks
+```
+
 ## Usage
 
-TODO: Write usage instructions here
+**HTML tags** [:speech_balloon:](https://github.com/mattboldt/typed.js/tree/master#html-tags)
+```coffeescript
+# Example in coffeescript
+$(".yourelement").typed
+    string: ["Typed.js is a <strong>jQuery</strong> plugin."]
+    contentType: 'html' # or 'text'
+```
 
-## Development
+**Strings from static HTML (SEO Friendly)** [:speech_balloon:](https://github.com/mattboldt/typed.js/tree/master#strings-from-static-html-seo-friendly)
+```coffeescript
+# Example in coffeescript
+$("#your-typed-bar").typed
+    stringElement: $("#your-typed-strings")
+```
+And you must wrap each string in the `typed-strings` div with a `<p>`
+```haml
+/ Example in haml
+#your-typed-strings
+    %p= "Typed.js is a <strong>jQuery</strong> plugin."
+    %p= "It <em>types</em> out sentences."
+%span#your-typed-bar
+```
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+**Line Breaks** [:speech_balloon:](https://github.com/mattboldt/typed.js/tree/master#line-breaks)
+* contentType: 'html'
+```coffeescript
+# Example in coffeescript
+$(".yourelement").typed
+    strings: ["Sentence with <br>line break."]
+```
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+* contentType: 'text'
 
-## Contributing
+Use `white-space: pre` in your typed text element, and then `\n` when typing out the strings.
+```haml
+/ Example in haml
+%span#yourelement{ style: "white-space:pre" }
+```
+```coffeescript
+# Example in coffeescript
+$("#yourelement").typed
+    strings: ["Sentence with \n line break."]
+```
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/typedjq-rails. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
+**Type Pausing** [:speech_balloon:](https://github.com/mattboldt/typed.js/tree/master#type-pausing)
+```coffeescript
+# Example in coffeescript
+$("#yourelement").typed
+    strings: ["First ^1000 sentence.", "Second sentence."]
+    # Waits 1000ms after typing "First"
+```
 
+**Customization** [:speech_balloon:](https://github.com/mattboldt/typed.js/tree/master#customization)
+```coffeescript
+# Example in coffeescript
+$("#yourelement").typed
+    strings: ["First sentence.", "Second sentence."]
+    
+    # Optionally use an HTML element to grab strings from (must wrap each string in a <p>)
+    stringsElement: null
+    
+    # typing speed
+    typeSpeed: 0
+    
+    # time before typing starts
+    startDelay: 0
+    
+    # backspacing speed
+    backSpeed: 0
+    
+    # time before backspacing
+    backDelay: 500
+    
+    # loop
+    loop: false
+    
+    # false = infinite
+    loopCount: false
+    
+    # show cursor
+    showCursor: true
+    
+    # character for cursor
+    cursorChar: "|"
+    
+    # attribute to type (null == text)
+    attr: null
+    
+    # either html or text
+    contentType: 'html'
+    
+    # call when done callback function
+    callback: function() {}
+    
+    # starting callback function before each string
+    preStringTyped: function() {}
+    
+    # callback for every typed string
+    onStringTyped: function() {}
+    
+    # callback for reset
+    resetCallback: function() {}
+```
+
+And if you really want to get more custom, please check [**Super Custom**](https://github.com/mattboldt/typed.js/tree/master#get-super-custom) in Typed.js.
 
 ## License
 
