@@ -44,6 +44,7 @@ $("#your-typed-bar").typed
     stringsElement: $("#your-typed-strings")
 ```
 ~~And you must wrap each string in the `typed-strings` div with a `<p>`~~
+
 Now you can wrap the children element in the `typed-strings`!
 ```haml
 / Example in haml
