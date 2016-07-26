@@ -43,12 +43,15 @@ $(".yourelement").typed
 $("#your-typed-bar").typed
     stringsElement: $("#your-typed-strings")
 ```
-And you must wrap each string in the `typed-strings` div with a `<p>`
+~~And you must wrap each string in the `typed-strings` div with a `<p>`~~
+Now you can wrap the children element in the `typed-strings`!
 ```haml
 / Example in haml
 #your-typed-strings
     %p= "Typed.js is a <strong>jQuery</strong> plugin."
     %p= "It <em>types</em> out sentences."
+    %h1= "This is h1 line, can be typed now."
+    %span= "Typed.js is really awesome."
 %span#your-typed-bar
 ```
 
@@ -98,6 +101,9 @@ $("#yourelement").typed
     
     # backspacing speed
     backSpeed: 0
+    
+    # shuffle the strings
++   shuffle: false
     
     # time before backspacing
     backDelay: 500
