@@ -1,6 +1,12 @@
 # TypedJQ-rails
 
-This gem is [**Typed.js**](https://github.com/mattboldt/typed.js) for rails. 
+
+[![Gem][gem-image]][gem-url]
+
+[gem-image]: https://img.shields.io/gem/v/typedjq-rails.svg
+[gem-url]: https://rubygems.org/gems/typedjq-rails
+
+This gem is [**Typed.js**](https://github.com/mattboldt/typed.js) v1.1.4 for rails. 
 
 [View the live demo](http://www.mattboldt.com/demos/typed-js/) and you'll know how awsome it is, let's use it now! :sunglasses:
 
