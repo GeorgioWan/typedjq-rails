@@ -10,6 +10,16 @@ This gem is [**Typed.js**](https://github.com/mattboldt/typed.js) v1.1.4 for rai
 
 [View the live demo](http://www.mattboldt.com/demos/typed-js/) and you'll know how awsome it is, let's use it now! :sunglasses:
 
+## Version Notice
+
+This Gem is provided **Typed.js v1.1.4**(this ver is still in jquery), but the newest version of **Typed.js** is [![GitHub release](https://img.shields.io/github/release/mattboldt/typed.js.svg)]().
+
+> Maybe take a day to update this :smile:
+
+## Demo With Rails5 Project
+
+Here is a [very simple demo](https://github.com/GeorgioWan/typed-rails-demo) on rails 5.
+
 ## Installation
 
 #### 1. Add this line to your `Gemfile`:
